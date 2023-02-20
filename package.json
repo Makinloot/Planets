@@ -4,13 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "sass": "cd src && sass --watch scss:css --style compressed",
+    "preview": "vite preview",
+    "dev": "concurrently \"vite\" \"npm run sass\""
   },
   "dependencies": {
     "@react-three/drei": "^9.56.25",
     "@react-three/fiber": "^8.11.2",
+    "concurrently": "^7.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.58.3",
