@@ -1,0 +1,46 @@
+.Header {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+  padding: 2rem 0;
+
+  a {
+    position: relative;
+    color: #006dd3;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.25rem;
+    transition: .3s;
+
+    &.active {
+      color: #0084ff;
+    }
+
+    &.active::after {
+      width: 100%;
+    }
+
+    &:hover {
+      color: #0084ff;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 110%;
+      height: 2px;
+      width: 0%;
+      background-color: #0084ff;
+      transition: .3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}

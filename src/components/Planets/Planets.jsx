@@ -1,7 +1,6 @@
 import { useState, useEffect, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
-import { Stars } from "@react-three/drei";
 
 import Planet from "./Planet";
 
@@ -17,20 +16,14 @@ const Planets = () => {
   }, [name]);
 
   if (planet) {
+    const { texture, name, clouds } = planet[0];
+
     return (
       <>
         <Canvas>
-          <pointLight color="#f6f3ea" position={[6, 1, 6]} intensity={1.2} />
+          <pointLight color="#f6f3ea" position={[6, 1, 6.5]} intensity={1.4} />
           <Suspense fallback={null}>
-            <Planet map={planet[0].texture} />
-            <Stars
-              radius={300}
-              depth={60}
-              count={10000}
-              factor={7}
-              saturation={0}
-              fade={true}
-            />
+            <Planet map={texture} name={name} clouds={clouds} />
           </Suspense>
         </Canvas>
       </>
