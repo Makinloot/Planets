@@ -1,10 +1,48 @@
 .Details {
   color: #fff;
+  padding-left: 1rem;
+
+  @media (max-width: 768px) {
+    padding-right: 1rem;
+  }
 
   h2 {
+    margin: 0 0 1rem;
+    font-size: 3rem;
     text-transform: capitalize;
   }
 
+  p {
+    max-width: 700px;
+  }
+
+  &-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 2rem 0 1rem;
+    
+    .detail {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: .3rem;
+      padding: 1rem;
+      border: 1px solid;
+      background-color: #000;
+
+      div:first-of-type {
+        color: #b6b6b6;
+      }
+    }
+  }
+  
+  
+  
+  
   .pagination {
     display: flex;
     gap: 1rem;
