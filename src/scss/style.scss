@@ -34,5 +34,11 @@
   @media (max-width: 768px) {
     padding-top: 100px;
     grid-template-columns: 1fr;
+    justify-content: initial;
+    align-items: initial;
+
+    .Details {
+      order: 2;
+    }
   }
 }
